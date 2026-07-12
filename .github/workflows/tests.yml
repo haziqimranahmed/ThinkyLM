@@ -29,6 +29,13 @@ jobs:
         run: |
           pip install numpy tokenizers pyyaml pydantic fastapi uvicorn tqdm safetensors psutil httpx pytest pytest-asyncio ruff
 
+      - name: Train tokenizer for tests
+        run: |
+          python tokenizer/train_tokenizer.py \
+            --input tokenizer/sample_text.txt \
+            --vocab-size 500 \
+            --output tokenizer/generated
+
       - name: Ruff lint check
         run: |
           ruff check thinkylm/ training/ evaluation/ inference/ api/ data_pipeline/ tokenizer/ tests/
@@ -98,14 +105,10 @@ jobs:
         run: |
           python -m pytest tests/test_api.py -v --tb=short
 
-      - name: Tokenizer round-trip (train + test)
+      - name: Tokenizer tests
         env:
           TOKENIZERS_PARALLELISM: "false"
         run: |
-          python tokenizer/train_tokenizer.py \
-            --input tokenizer/sample_text.txt \
-            --vocab-size 500 \
-            --output tokenizer/generated
           python -m pytest tests/test_tokenizer.py -v --tb=short
 
       # NOTE: We do NOT run model training in CI.
