@@ -8,7 +8,6 @@ from __future__ import annotations
 
 import os
 import time
-from typing import Optional
 
 import psutil
 import torch
@@ -89,7 +88,7 @@ class Timer:
         self.start_time: float = 0.0
         self.elapsed_seconds: float = 0.0
 
-    def __enter__(self) -> "Timer":
+    def __enter__(self) -> Timer:
         self.start_time = time.perf_counter()
         return self
 

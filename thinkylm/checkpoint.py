@@ -10,7 +10,7 @@ from __future__ import annotations
 import json
 import time
 from pathlib import Path
-from typing import Any, Optional
+from typing import Any
 
 import torch
 import torch.nn as nn
@@ -26,7 +26,7 @@ except ImportError:
 
 def save_checkpoint(
     model: nn.Module,
-    optimizer: Optional[torch.optim.Optimizer],
+    optimizer: torch.optim.Optimizer | None,
     step: int,
     loss: float,
     config_dict: dict,
@@ -91,7 +91,7 @@ def save_checkpoint(
 def load_checkpoint(
     model: nn.Module,
     checkpoint_path: str | Path,
-    optimizer: Optional[torch.optim.Optimizer] = None,
+    optimizer: torch.optim.Optimizer | None = None,
     device: str = "cpu",
 ) -> dict[str, Any]:
     """Load a checkpoint into a model (and optionally an optimizer).
@@ -143,7 +143,7 @@ def load_checkpoint(
     return meta
 
 
-def find_latest_checkpoint(checkpoint_dir: str | Path) -> Optional[Path]:
+def find_latest_checkpoint(checkpoint_dir: str | Path) -> Path | None:
     """Find the most recent checkpoint in a directory.
 
     Args:

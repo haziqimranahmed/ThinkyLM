@@ -2,11 +2,12 @@
 ThinkyLM — Generation Tests
 """
 
-import torch
 import pytest
+import torch
+
 from thinkylm.config import ModelConfig
-from thinkylm.model import build_model
 from thinkylm.generation import generate, greedy_generate
+from thinkylm.model import build_model
 
 
 @pytest.fixture

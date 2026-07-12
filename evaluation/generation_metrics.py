@@ -8,7 +8,6 @@ from __future__ import annotations
 
 import time
 from collections import Counter
-from typing import Optional
 
 import torch
 
@@ -23,7 +22,7 @@ def measure_generation(
     top_k: int = 40,
     top_p: float = 0.9,
     repetition_penalty: float = 1.1,
-    eos_token_id: Optional[int] = None,
+    eos_token_id: int | None = None,
 ) -> dict:
     """Generate text and compute generation quality metrics.
 

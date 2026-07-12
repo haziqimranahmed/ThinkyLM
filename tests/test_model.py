@@ -4,10 +4,11 @@ ThinkyLM — Model Tests
 Tests forward pass, loss computation, and parameter counting.
 """
 
-import torch
 import pytest
+import torch
+
 from thinkylm.config import ModelConfig
-from thinkylm.model import ThinkyLM, build_model
+from thinkylm.model import build_model
 
 
 @pytest.fixture

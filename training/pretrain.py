@@ -20,7 +20,6 @@ import argparse
 import os
 import signal
 import sys
-import time
 
 # Safe CPU defaults — must be set before torch import
 os.environ.setdefault("TOKENIZERS_PARALLELISM", "false")
@@ -33,10 +32,8 @@ torch.set_num_threads(2)
 
 from pathlib import Path
 
-import psutil
-
 from data_pipeline.clean import clean_file
-from data_pipeline.dataset import build_dataloader, build_dataset_from_texts, TokenSequenceDataset
+from data_pipeline.dataset import build_dataloader
 from data_pipeline.deduplicate import dedup_paragraphs
 from data_pipeline.split import split_texts
 from thinkylm.checkpoint import (
@@ -56,7 +53,6 @@ from thinkylm.utils import (
 from training.monitor import TrainingMonitor
 from training.optimizer import build_optimizer
 from training.scheduler import apply_lr, get_lr
-
 
 # ──────────────────────────────────────────────────────────────────────────────
 # Signal handling — graceful Ctrl+C

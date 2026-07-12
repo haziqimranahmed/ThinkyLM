@@ -6,14 +6,10 @@ Memory-efficient Dataset and DataLoader wrappers for token sequences.
 
 from __future__ import annotations
 
-import json
 from pathlib import Path
-from typing import Optional
 
 import torch
 from torch.utils.data import DataLoader, Dataset
-
-from data_pipeline.tokenize import load_sequences
 
 
 class TokenSequenceDataset(Dataset):

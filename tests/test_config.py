@@ -3,6 +3,7 @@ ThinkyLM — Configuration Tests
 """
 
 import pytest
+
 from thinkylm.config import ModelConfig, ThinkyLMConfig, TrainingConfig
 
 

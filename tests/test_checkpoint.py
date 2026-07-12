@@ -3,16 +3,17 @@ ThinkyLM — Checkpoint Tests
 """
 
 import json
-import torch
+
 import pytest
-from pathlib import Path
+import torch
+
+from thinkylm.checkpoint import (
+    find_latest_checkpoint,
+    load_checkpoint,
+    save_checkpoint,
+)
 from thinkylm.config import ModelConfig
 from thinkylm.model import build_model
-from thinkylm.checkpoint import (
-    save_checkpoint,
-    load_checkpoint,
-    find_latest_checkpoint,
-)
 
 
 @pytest.fixture

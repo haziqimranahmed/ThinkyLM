@@ -19,7 +19,6 @@ Usage:
 from __future__ import annotations
 
 import os
-import sys
 
 os.environ.setdefault("TOKENIZERS_PARALLELISM", "false")
 os.environ.setdefault("OMP_NUM_THREADS", "2")

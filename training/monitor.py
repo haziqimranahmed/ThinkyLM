@@ -8,7 +8,6 @@ from __future__ import annotations
 
 import time
 from pathlib import Path
-from typing import Optional
 
 import psutil
 
@@ -31,7 +30,7 @@ class TrainingMonitor:
         self.log_dir = Path(log_dir)
         self.max_runtime_minutes = max_runtime_minutes
         self.start_time = time.time()
-        self.writer: Optional[object] = None  # SummaryWriter or None
+        self.writer: object | None = None  # SummaryWriter or None
 
         if use_tensorboard:
             try:

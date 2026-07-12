@@ -5,8 +5,9 @@ Verifies causal masking correctness. Future tokens must receive zero attention w
 This is the most critical architectural test.
 """
 
-import torch
 import pytest
+import torch
+
 from thinkylm.attention import MultiHeadCausalAttention
 
 

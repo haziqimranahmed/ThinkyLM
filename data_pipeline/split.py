@@ -7,8 +7,6 @@ Deterministic train / validation / test splitting.
 from __future__ import annotations
 
 import random
-from pathlib import Path
-from typing import Sequence
 
 
 def split_texts(

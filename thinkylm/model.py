@@ -15,9 +15,6 @@ Design notes:
 
 from __future__ import annotations
 
-import math
-from typing import Optional
-
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -44,7 +41,7 @@ class ThinkyLM(nn.Module):
             hidden_size=config.hidden_size,
             padding_idx=0,
         )
-        self.pos_emb: Optional[LearnablePositionalEmbedding] = None
+        self.pos_emb: LearnablePositionalEmbedding | None = None
         if not config.use_rope:
             self.pos_emb = LearnablePositionalEmbedding(
                 context_length=config.context_length,
@@ -88,7 +85,7 @@ class ThinkyLM(nn.Module):
     def forward(
         self,
         input_ids: torch.Tensor,
-        labels: Optional[torch.Tensor] = None,
+        labels: torch.Tensor | None = None,
     ) -> dict[str, torch.Tensor]:
         """Forward pass with optional loss computation.
 

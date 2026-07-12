@@ -7,8 +7,6 @@ Computes perplexity on a text dataset using a trained ThinkyLM model.
 from __future__ import annotations
 
 import math
-from pathlib import Path
-from typing import Optional
 
 import torch
 

@@ -9,8 +9,8 @@ from __future__ import annotations
 
 import re
 import unicodedata
+from collections.abc import Iterator
 from pathlib import Path
-from typing import Iterator
 
 
 def clean_text(text: str, min_length: int = 20, max_length: int = 100_000) -> str | None:

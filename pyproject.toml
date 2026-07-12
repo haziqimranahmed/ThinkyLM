@@ -57,7 +57,16 @@ target-version = "py311"
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "N", "W", "UP", "B"]
-ignore = ["E501"]
+ignore = [
+    "E501",   # line too long — handled by formatter
+    "E402",   # module-level import not at top — intentional: env vars set before torch import
+    "B008",   # do not perform function calls in argument defaults — false positives in FastAPI Depends()
+    "B905",   # zip() without strict= — intentional in ML code with matched-length sequences
+    "N806",   # variable should be lowercase — B, T, C, H are universal PyTorch tensor shape names
+    "N812",   # lowercase imported as non-lowercase — torch.nn.functional as F is universal PyTorch idiom
+    "B007",   # loop variable not used — _name pattern used in named_parameters() loops
+    "N803",   # argument name should be lowercase — same B/T/C shape argument convention
+]
 
 [tool.ruff.lint.isort]
 known-first-party = ["thinkylm"]

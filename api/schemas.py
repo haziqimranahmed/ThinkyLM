@@ -6,9 +6,7 @@ Request/response models for the FastAPI application.
 
 from __future__ import annotations
 
-from typing import Optional
-
-from pydantic import BaseModel, Field, field_validator
+from pydantic import BaseModel, Field
 
 
 class GenerateRequest(BaseModel):
@@ -42,7 +40,7 @@ class GenerateResponse(BaseModel):
     generated_text: str
     tokens_generated: int
     model_loaded: bool
-    warning: Optional[str] = None
+    warning: str | None = None
     disclaimer: str = (
         "ThinkyLM is a small educational model (~1M parameters) trained from scratch. "
         "Outputs are not representative of genuine reasoning."
@@ -64,7 +62,7 @@ class AnalyseArgumentResponse(BaseModel):
     analysis: str
     tokens_generated: int
     model_loaded: bool
-    warning: Optional[str] = None
+    warning: str | None = None
 
 
 class ModelInfoResponse(BaseModel):

@@ -39,10 +39,11 @@ def train_tokenizer(
     """
     try:
         from tokenizers import Tokenizer, trainers
-        from tokenizers.models import BPE
-        from tokenizers.normalizers import NFKC, Sequence as NormSequence
-        from tokenizers.pre_tokenizers import ByteLevel
         from tokenizers.decoders import ByteLevel as ByteLevelDecoder
+        from tokenizers.models import BPE
+        from tokenizers.normalizers import NFKC
+        from tokenizers.normalizers import Sequence as NormSequence
+        from tokenizers.pre_tokenizers import ByteLevel
     except ImportError:
         print("ERROR: 'tokenizers' package not found. Run: pip install tokenizers")
         sys.exit(1)

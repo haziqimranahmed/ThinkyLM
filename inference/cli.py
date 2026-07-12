@@ -12,7 +12,6 @@ from __future__ import annotations
 
 import argparse
 import os
-import sys
 
 os.environ.setdefault("TOKENIZERS_PARALLELISM", "false")
 os.environ.setdefault("OMP_NUM_THREADS", "2")
@@ -62,7 +61,7 @@ def run_cli(
     model.eval()
 
     tokenizer = load_tokenizer(cfg.tokenizer_path)
-    bos_id = tokenizer.token_to_id("<bos>") or 2
+    tokenizer.token_to_id("<bos>") or 2
     eos_id = tokenizer.token_to_id("<eos>") or 3
 
     print(

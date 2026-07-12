@@ -14,7 +14,6 @@ from __future__ import annotations
 import argparse
 import json
 import os
-import sys
 from pathlib import Path
 
 os.environ.setdefault("TOKENIZERS_PARALLELISM", "false")
@@ -38,8 +37,8 @@ def evaluate_checkpoint(checkpoint_path: Path, config_path: str) -> dict:
     """
     from data_pipeline.clean import clean_file
     from data_pipeline.tokenize import load_tokenizer, tokenize_texts
-    from evaluation.perplexity import compute_perplexity
     from evaluation.generation_metrics import measure_generation
+    from evaluation.perplexity import compute_perplexity
     from thinkylm.checkpoint import load_checkpoint
     from thinkylm.config import ThinkyLMConfig
     from thinkylm.model import build_model
@@ -52,8 +51,8 @@ def evaluate_checkpoint(checkpoint_path: Path, config_path: str) -> dict:
     meta = load_checkpoint(model, checkpoint_path, device=str(device))
 
     tokenizer = load_tokenizer(cfg.tokenizer_path)
-    bos_id = tokenizer.token_to_id("<bos>") or 2
-    eos_id = tokenizer.token_to_id("<eos>") or 3
+    tokenizer.token_to_id("<bos>") or 2
+    tokenizer.token_to_id("<eos>") or 3
 
     # Build eval sequences
     data_path = Path(cfg.data.train_path)

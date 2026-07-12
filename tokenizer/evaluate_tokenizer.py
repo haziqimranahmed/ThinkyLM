@@ -81,7 +81,7 @@ def evaluate_tokenizer(tokenizer_dir: Path, text_path: Path) -> None:
     # Show first few tokens of a philosophical sentence
     demo = "Your conclusion is possible, although premise two appears to have entered the argument without identification."
     enc = tokenizer.encode(demo)
-    print(f"Sample tokenisation:")
+    print("Sample tokenisation:")
     print(f"  '{demo[:60]}...'")
     print(f"  Tokens: {enc.tokens[:20]}")
     print("=" * 55)

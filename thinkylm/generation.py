@@ -7,8 +7,6 @@ and repetition penalty. Supports deterministic generation with fixed seed.
 
 from __future__ import annotations
 
-from typing import Optional
-
 import torch
 import torch.nn.functional as F
 
@@ -24,8 +22,8 @@ def generate(
     top_k: int = 0,
     top_p: float = 1.0,
     repetition_penalty: float = 1.0,
-    eos_token_id: Optional[int] = None,
-    seed: Optional[int] = None,
+    eos_token_id: int | None = None,
+    seed: int | None = None,
 ) -> torch.Tensor:
     """Generate tokens autoregressively from a prompt.
 
@@ -49,7 +47,6 @@ def generate(
         torch.manual_seed(seed)
 
     model.eval()
-    device = input_ids.device
     context_length = model.config.context_length
 
     generated = input_ids.clone()
@@ -161,7 +158,7 @@ def greedy_generate(
     model: ThinkyLM,
     input_ids: torch.Tensor,
     max_new_tokens: int = 50,
-    eos_token_id: Optional[int] = None,
+    eos_token_id: int | None = None,
 ) -> torch.Tensor:
     """Deterministic greedy decoding (argmax at each step).
 

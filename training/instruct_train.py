@@ -41,7 +41,6 @@ from pathlib import Path
 from thinkylm.checkpoint import load_checkpoint, save_checkpoint
 from thinkylm.config import ThinkyLMConfig
 from thinkylm.model import build_model
-from thinkylm.utils import format_number
 from training.optimizer import build_optimizer
 from training.scheduler import apply_lr, get_lr
 
@@ -55,11 +54,11 @@ def format_instruction(record: dict) -> str:
     Returns:
         Formatted string for tokenization.
     """
-    parts = [f"<system>You are ThinkyLM, a careful and dry philosophical reasoner.</system>"]
+    parts = ["<system>You are ThinkyLM, a careful and dry philosophical reasoner.</system>"]
     parts.append(f"<user>{record['instruction']}")
     if record.get("input"):
         parts.append(f"\n{record['input']}")
-    parts.append(f"</user>")
+    parts.append("</user>")
     parts.append(f"<assistant>{record['output']}</assistant>")
     return "\n".join(parts)
 

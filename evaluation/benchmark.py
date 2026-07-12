@@ -15,7 +15,6 @@ from __future__ import annotations
 import argparse
 import json
 import os
-import sys
 import time
 from pathlib import Path
 
@@ -58,7 +57,7 @@ def run_benchmark(
     model.eval()
 
     tokenizer = load_tokenizer(cfg.tokenizer_path)
-    bos_id = tokenizer.token_to_id("<bos>") or 2
+    tokenizer.token_to_id("<bos>") or 2
     eos_id = tokenizer.token_to_id("<eos>") or 3
 
     with bench_path.open() as f:

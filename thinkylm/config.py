@@ -8,10 +8,8 @@ Purpose: Dataclass-based configuration with YAML loading, validation,
 
 from __future__ import annotations
 
-import os
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Optional
 
 import yaml
 
@@ -108,7 +106,7 @@ class ThinkyLMConfig:
     MAX_LOCAL_CONTEXT: int = field(default=512, init=False, repr=False)
 
     @classmethod
-    def from_yaml(cls, path: str | Path) -> "ThinkyLMConfig":
+    def from_yaml(cls, path: str | Path) -> ThinkyLMConfig:
         """Load configuration from a YAML file.
 
         Args:

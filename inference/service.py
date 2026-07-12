@@ -9,7 +9,6 @@ from __future__ import annotations
 import os
 import threading
 from pathlib import Path
-from typing import Optional
 
 os.environ.setdefault("TOKENIZERS_PARALLELISM", "false")
 os.environ.setdefault("OMP_NUM_THREADS", "2")
@@ -28,7 +27,7 @@ class InferenceService:
         checkpoint_path: Optional path to model checkpoint.
     """
 
-    def __init__(self, config_path: str, checkpoint_path: Optional[str] = None) -> None:
+    def __init__(self, config_path: str, checkpoint_path: str | None = None) -> None:
         self._lock = threading.Lock()
         self.config_path = config_path
         self.checkpoint_path = checkpoint_path
@@ -36,7 +35,7 @@ class InferenceService:
         self.tokenizer = None
         self.cfg = None
         self.loaded = False
-        self.load_error: Optional[str] = None
+        self.load_error: str | None = None
         self._load_model()
 
     def _load_model(self) -> None:
@@ -96,7 +95,7 @@ class InferenceService:
         if self.model is None or self.tokenizer is None:
             return {"error": f"Model not loaded: {self.load_error}"}
 
-        bos_id = self.tokenizer.token_to_id("<bos>") or 2
+        self.tokenizer.token_to_id("<bos>") or 2
         eos_id = self.tokenizer.token_to_id("<eos>") or 3
 
         with self._lock:

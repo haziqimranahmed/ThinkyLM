@@ -2,9 +2,9 @@
 ThinkyLM — Tokenizer Tests
 """
 
-import pytest
 from pathlib import Path
 
+import pytest
 
 TOKENIZER_PATH = Path("tokenizer/generated")
 

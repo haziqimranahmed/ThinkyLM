@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """
 ThinkyLM — Hardware Safety Checker
 =====================================
@@ -14,7 +13,6 @@ from __future__ import annotations
 
 import platform
 import sys
-from pathlib import Path
 
 
 def check_hardware() -> dict:

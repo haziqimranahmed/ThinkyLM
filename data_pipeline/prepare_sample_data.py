@@ -13,7 +13,6 @@ from __future__ import annotations
 import shutil
 from pathlib import Path
 
-
 SAMPLE_TEXTS = [
     # Original text, written specifically for ThinkyLM (MIT-licensed)
     """Philosophy is the systematic inquiry into questions that matter but resist easy answers.
