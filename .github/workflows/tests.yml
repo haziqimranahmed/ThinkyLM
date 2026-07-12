@@ -27,7 +27,7 @@ jobs:
 
       - name: Install project dependencies
         run: |
-          pip install tokenizers pyyaml pydantic fastapi uvicorn tqdm safetensors psutil httpx pytest pytest-asyncio ruff
+          pip install numpy tokenizers pyyaml pydantic fastapi uvicorn tqdm safetensors psutil httpx pytest pytest-asyncio ruff
 
       - name: Ruff lint check
         run: |
