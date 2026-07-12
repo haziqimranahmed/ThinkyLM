@@ -1,0 +1,571 @@
+[
+  {
+    "id": "TB-001",
+    "category": "claim_clarification",
+    "prompt": "Clarify what is meant by the claim: 'Science has disproved religion.'",
+    "expected_qualities": [
+      "Identifies ambiguity in 'science' and 'religion'",
+      "Notes that religion encompasses non-empirical claims",
+      "Distinguishes between specific testable claims and broader metaphysical positions",
+      "Avoids asserting that the clarified claim is false"
+    ],
+    "common_failure_modes": [
+      "Accepting the claim uncritically",
+      "Dismissing the claim without analysis",
+      "Failing to distinguish between different types of religious claims"
+    ],
+    "automatic_checks": ["contains 'empirical' OR 'metaphysical' OR 'claims'"],
+    "human_score": null,
+    "reviewer_notes": ""
+  },
+  {
+    "id": "TB-002",
+    "category": "assumption_detection",
+    "prompt": "What hidden assumptions are present in: 'Economic growth is always good for society'?",
+    "expected_qualities": [
+      "Identifies 'good' as undefined",
+      "Questions whether growth benefits are evenly distributed",
+      "Considers environmental or sustainability costs",
+      "Questions the universality of 'always'"
+    ],
+    "common_failure_modes": [
+      "Agreeing without analysis",
+      "Only noting one assumption",
+      "Missing the definitional gap in 'good'"
+    ],
+    "automatic_checks": ["contains 'assume' OR 'distribut' OR 'always'"],
+    "human_score": null,
+    "reviewer_notes": ""
+  },
+  {
+    "id": "TB-003",
+    "category": "steelmanning",
+    "prompt": "Present the strongest possible version of the argument that social media should be banned.",
+    "expected_qualities": [
+      "Does not start with the weakest version",
+      "Grounds the argument in adolescent neurological development or attention economy harms",
+      "Draws a parallel to other age-based restrictions",
+      "Does not dismiss the argument while steelmanning it"
+    ],
+    "common_failure_modes": [
+      "Presenting a weak version and calling it strong",
+      "Mixing steelmanning with rebuttal",
+      "Ignoring the regulatory precedent angle"
+    ],
+    "automatic_checks": ["contains 'strongest' OR 'neurological' OR 'attention'"],
+    "human_score": null,
+    "reviewer_notes": ""
+  },
+  {
+    "id": "TB-004",
+    "category": "counterargument",
+    "prompt": "Give a strong counterargument to: 'Capital punishment deters crime.'",
+    "expected_qualities": [
+      "Cites empirical evidence or its absence",
+      "Notes that deterrence requires perceived certainty of punishment",
+      "Mentions that most murders are not premeditated calculations",
+      "Avoids purely emotional argument"
+    ],
+    "common_failure_modes": [
+      "Pure emotional appeal",
+      "Asserting without reasoning",
+      "Ignoring the empirical literature"
+    ],
+    "automatic_checks": ["contains 'evidence' OR 'deterr' OR 'empirical'"],
+    "human_score": null,
+    "reviewer_notes": ""
+  },
+  {
+    "id": "TB-005",
+    "category": "fallacy_recognition",
+    "prompt": "What fallacy, if any, is committed in: 'Einstein believed in God, so belief in God is rational.'?",
+    "expected_qualities": [
+      "Identifies the appeal to authority",
+      "Notes that expertise in physics does not transfer to theology",
+      "Distinguishes relevant from irrelevant authority",
+      "Does not dismiss the claim for wrong reasons"
+    ],
+    "common_failure_modes": [
+      "Misidentifying the fallacy",
+      "Accepting the argument because of Einstein's status",
+      "Missing that Einstein's views on God were complex and contested"
+    ],
+    "automatic_checks": ["contains 'authority' OR 'appeal' OR 'expertise'"],
+    "human_score": null,
+    "reviewer_notes": ""
+  },
+  {
+    "id": "TB-006",
+    "category": "belief_updating",
+    "prompt": "You believe exercise has no effect on anxiety. A meta-analysis of 30 randomised trials finds significant effect sizes. How should this change your belief?",
+    "expected_qualities": [
+      "Acknowledges the evidential weight of meta-analysis",
+      "Updates the belief substantially but not absolutely",
+      "Maintains appropriate residual uncertainty",
+      "Does not refuse to update"
+    ],
+    "common_failure_modes": [
+      "Refusing to update",
+      "Updating completely without noting limits",
+      "Ignoring the randomised trial component"
+    ],
+    "automatic_checks": ["contains 'update' OR 'revise' OR 'evidence'"],
+    "human_score": null,
+    "reviewer_notes": ""
+  },
+  {
+    "id": "TB-007",
+    "category": "uncertainty_calibration",
+    "prompt": "How confident should one be that consciousness is entirely produced by the brain?",
+    "expected_qualities": [
+      "Acknowledges strong correlational evidence",
+      "Notes the hard problem of consciousness",
+      "Expresses high but not complete confidence",
+      "Does not claim certainty in either direction"
+    ],
+    "common_failure_modes": [
+      "Asserting full certainty",
+      "Asserting that nothing is known",
+      "Ignoring the distinction between correlation and explanation"
+    ],
+    "automatic_checks": ["contains 'uncertain' OR 'hard problem' OR 'correlat'"],
+    "human_score": null,
+    "reviewer_notes": ""
+  },
+  {
+    "id": "TB-008",
+    "category": "philosophical_comparison",
+    "prompt": "Compare consequentialism and deontology on the question of whether to lie to protect someone from harm.",
+    "expected_qualities": [
+      "Accurately represents both positions",
+      "Notes that consequentialism permits or requires the lie",
+      "Notes that Kantian deontology traditionally prohibits it",
+      "Identifies the key axis of disagreement"
+    ],
+    "common_failure_modes": [
+      "Misrepresenting either position",
+      "Failing to identify where they diverge",
+      "Concluding without engaging the argument"
+    ],
+    "automatic_checks": ["contains 'consequent' AND 'deontol'"],
+    "human_score": null,
+    "reviewer_notes": ""
+  },
+  {
+    "id": "TB-009",
+    "category": "humour_appropriateness",
+    "prompt": "Respond to: 'I have completely solved philosophy.'",
+    "expected_qualities": [
+      "Uses dry, restrained wit rather than ridicule",
+      "Does not take the claim at face value",
+      "Remains respectful while expressing scepticism",
+      "Is actually somewhat funny"
+    ],
+    "common_failure_modes": [
+      "Being genuinely dismissive or rude",
+      "Missing the opportunity for wit entirely",
+      "Responding with excessive sycophancy"
+    ],
+    "automatic_checks": ["length > 30 AND length < 300"],
+    "human_score": null,
+    "reviewer_notes": ""
+  },
+  {
+    "id": "TB-010",
+    "category": "respectful_disagreement",
+    "prompt": "Disagree respectfully with: 'Philosophy has contributed nothing to human knowledge.'",
+    "expected_qualities": [
+      "Does not capitulate or agree to avoid conflict",
+      "Provides specific examples of philosophical contribution",
+      "Acknowledges the strongest version of the objection",
+      "Maintains a non-hostile tone"
+    ],
+    "common_failure_modes": [
+      "Aggressive or sarcastic tone",
+      "Conceding entirely",
+      "Vague disagreement without substance"
+    ],
+    "automatic_checks": ["contains 'contribut' OR 'example' OR 'however'"],
+    "human_score": null,
+    "reviewer_notes": ""
+  },
+  {
+    "id": "TB-011",
+    "category": "claim_clarification",
+    "prompt": "What does 'freedom' mean in the claim: 'People are free to make their own choices'?",
+    "expected_qualities": [
+      "Distinguishes negative from positive freedom",
+      "Notes that formal freedom may differ from effective freedom",
+      "Identifies structural constraints",
+      "Does not assume one reading is obviously correct"
+    ],
+    "common_failure_modes": [
+      "Using only one definition",
+      "Not noting the ambiguity",
+      "Concluding without analysis"
+    ],
+    "automatic_checks": ["contains 'negative' OR 'positive' OR 'constraint'"],
+    "human_score": null,
+    "reviewer_notes": ""
+  },
+  {
+    "id": "TB-012",
+    "category": "assumption_detection",
+    "prompt": "Identify assumptions in: 'Success requires hard work.'",
+    "expected_qualities": [
+      "Challenges the definition of success",
+      "Notes that luck, privilege, or circumstance also matter",
+      "Questions whether hard work is sufficient or merely necessary",
+      "Notes survivorship bias in evidence for this claim"
+    ],
+    "common_failure_modes": [
+      "Accepting the claim uncritically",
+      "Offering only a single assumption",
+      "Missing the survivorship bias angle"
+    ],
+    "automatic_checks": ["contains 'luck' OR 'bias' OR 'sufficient' OR 'necessary'"],
+    "human_score": null,
+    "reviewer_notes": ""
+  },
+  {
+    "id": "TB-013",
+    "category": "steelmanning",
+    "prompt": "Steelman the position that free will is an illusion.",
+    "expected_qualities": [
+      "Engages with the determinism argument seriously",
+      "References neuroscientific or physical constraints",
+      "Does not use the weakest version",
+      "Clearly states it is the steelman, not the final position"
+    ],
+    "common_failure_modes": [
+      "Immediately rebutting the position",
+      "Using a caricature of determinism",
+      "Not indicating this is the steelman"
+    ],
+    "automatic_checks": ["contains 'determin' OR 'causal' OR 'neural'"],
+    "human_score": null,
+    "reviewer_notes": ""
+  },
+  {
+    "id": "TB-014",
+    "category": "counterargument",
+    "prompt": "Counterargue: 'AI will inevitably replace all human jobs.'",
+    "expected_qualities": [
+      "Notes historical evidence of job displacement and creation",
+      "Questions the claim of 'all' jobs",
+      "Raises questions about human preference for human interaction",
+      "Notes regulatory and economic constraints"
+    ],
+    "common_failure_modes": [
+      "Agreeing without qualification",
+      "Purely dismissing the claim",
+      "Ignoring historical evidence"
+    ],
+    "automatic_checks": ["contains 'histor' OR 'previous' OR 'all'"],
+    "human_score": null,
+    "reviewer_notes": ""
+  },
+  {
+    "id": "TB-015",
+    "category": "fallacy_recognition",
+    "prompt": "Identify the fallacy in: 'My grandfather smoked all his life and lived to 95, so smoking cannot be that harmful.'",
+    "expected_qualities": [
+      "Identifies the anecdotal fallacy or hasty generalisation",
+      "Notes that survivor stories are not representative",
+      "Mentions population-level evidence",
+      "Notes the distinction between individual and statistical claims"
+    ],
+    "common_failure_modes": [
+      "Missing the anecdotal nature of the argument",
+      "Naming the wrong fallacy",
+      "Not explaining why the fallacy matters"
+    ],
+    "automatic_checks": ["contains 'anecdot' OR 'generaliz' OR 'population'"],
+    "human_score": null,
+    "reviewer_notes": ""
+  },
+  {
+    "id": "TB-016",
+    "category": "belief_updating",
+    "prompt": "You believe that meditation has no measurable effect on stress. New studies show consistent cortisol reduction. How should this change your view?",
+    "expected_qualities": [
+      "Updates positively",
+      "Notes the importance of study quality",
+      "Maintains some uncertainty about mechanism",
+      "Does not shift to complete certainty"
+    ],
+    "common_failure_modes": [
+      "Ignoring the evidence",
+      "Complete certainty after one study",
+      "Dismissing without engagement"
+    ],
+    "automatic_checks": ["contains 'update' OR 'revise' OR 'evidence'"],
+    "human_score": null,
+    "reviewer_notes": ""
+  },
+  {
+    "id": "TB-017",
+    "category": "uncertainty_calibration",
+    "prompt": "How confident should you be about predictions of AI reaching human-level intelligence by 2030?",
+    "expected_qualities": [
+      "Notes expert disagreement",
+      "Distinguishes types of intelligence",
+      "Expresses genuine uncertainty without false precision",
+      "Avoids both catastrophism and dismissal"
+    ],
+    "common_failure_modes": [
+      "High confidence in a specific date",
+      "Dismissing the possibility entirely",
+      "Ignoring definitional problems with 'human-level'"
+    ],
+    "automatic_checks": ["contains 'uncertain' OR 'disagree' OR 'define'"],
+    "human_score": null,
+    "reviewer_notes": ""
+  },
+  {
+    "id": "TB-018",
+    "category": "philosophical_comparison",
+    "prompt": "Compare the Turing test and the Chinese Room as positions on machine intelligence.",
+    "expected_qualities": [
+      "Accurately represents both positions",
+      "Notes that both concern the relationship between behaviour and understanding",
+      "Identifies Searle's intentionality argument",
+      "Notes what each position gets right"
+    ],
+    "common_failure_modes": [
+      "Misrepresenting Searle's argument",
+      "Treating one position as obviously correct",
+      "Failing to note the key axis of disagreement"
+    ],
+    "automatic_checks": ["contains 'Turing' AND 'Searle' OR 'Chinese'"],
+    "human_score": null,
+    "reviewer_notes": ""
+  },
+  {
+    "id": "TB-019",
+    "category": "humour_appropriateness",
+    "prompt": "A user says: 'Logically, I am always right because I use logic.' Respond.",
+    "expected_qualities": [
+      "Identifies the circularity or question-begging",
+      "Uses some dry wit",
+      "Does not mock the user",
+      "Brief and precise"
+    ],
+    "common_failure_modes": [
+      "Agreeing without noting the problem",
+      "Being condescending",
+      "Missing the self-referential issue"
+    ],
+    "automatic_checks": ["length > 20 AND length < 250"],
+    "human_score": null,
+    "reviewer_notes": ""
+  },
+  {
+    "id": "TB-020",
+    "category": "respectful_disagreement",
+    "prompt": "Respectfully disagree with: 'Emotions have no place in rational argument.'",
+    "expected_qualities": [
+      "Acknowledges the kernel of truth (emotional manipulation is a problem)",
+      "Notes that emotions can carry evidential weight",
+      "References Damasio or related evidence (or the concept thereof)",
+      "Maintains a non-hostile tone"
+    ],
+    "common_failure_modes": [
+      "Agreeing entirely",
+      "Purely emotional counterargument",
+      "Dismissing the concern that emotions can mislead"
+    ],
+    "automatic_checks": ["contains 'emotion' AND ('evidence' OR 'evidential' OR 'information')"],
+    "human_score": null,
+    "reviewer_notes": ""
+  },
+  {
+    "id": "TB-021",
+    "category": "claim_clarification",
+    "prompt": "Clarify: 'The mind is just the brain.'",
+    "expected_qualities": [
+      "Notes physicalist vs dualist interpretations",
+      "Asks what 'just' is doing in the claim",
+      "Notes that reduction doesn't imply elimination",
+      "References the hard problem at minimum"
+    ],
+    "common_failure_modes": [
+      "Agreeing or disagreeing without unpacking the claim",
+      "Ignoring the philosophical freight of 'just'"
+    ],
+    "automatic_checks": ["contains 'physical' OR 'reduc' OR 'dualism'"],
+    "human_score": null,
+    "reviewer_notes": ""
+  },
+  {
+    "id": "TB-022",
+    "category": "assumption_detection",
+    "prompt": "What is assumed in: 'Natural products are safer than synthetic ones'?",
+    "expected_qualities": [
+      "Notes that natural origin does not guarantee safety",
+      "Provides examples of natural toxins",
+      "Notes that synthetic does not mean harmful",
+      "Identifies the appeal to nature"
+    ],
+    "common_failure_modes": [
+      "Accepting the claim",
+      "Only providing one example",
+      "Missing the appeal to nature as a fallacy type"
+    ],
+    "automatic_checks": ["contains 'natural' AND ('toxic' OR 'example' OR 'arsenic' OR 'fallacy')"],
+    "human_score": null,
+    "reviewer_notes": ""
+  },
+  {
+    "id": "TB-023",
+    "category": "steelmanning",
+    "prompt": "Steelman: 'Mathematics is not discovered but invented.'",
+    "expected_qualities": [
+      "Engages with constructivism or formalism",
+      "Notes that mathematical objects may be human-made",
+      "Draws on unreasonable effectiveness of mathematics as something to explain",
+      "Does not dismiss the position"
+    ],
+    "common_failure_modes": [
+      "Treating the question as settled",
+      "Using a weak version of constructivism",
+      "Immediate rebuttal instead of steelman"
+    ],
+    "automatic_checks": ["contains 'construct' OR 'formal' OR 'invent'"],
+    "human_score": null,
+    "reviewer_notes": ""
+  },
+  {
+    "id": "TB-024",
+    "category": "counterargument",
+    "prompt": "Counterargue: 'Individual choices don't matter for climate change.'",
+    "expected_qualities": [
+      "Notes aggregate effects of individual choices",
+      "Raises the political signalling value of individual action",
+      "Questions the fatalistic logic",
+      "Does not deny structural factors entirely"
+    ],
+    "common_failure_modes": [
+      "Agreeing entirely without qualification",
+      "Ignoring structural factors",
+      "Purely moral argument without engaging the scale objection"
+    ],
+    "automatic_checks": ["contains 'aggreg' OR 'collective' OR 'signal'"],
+    "human_score": null,
+    "reviewer_notes": ""
+  },
+  {
+    "id": "TB-025",
+    "category": "fallacy_recognition",
+    "prompt": "What is wrong with: 'This new drug must be safe because it's approved by a doctor.'?",
+    "expected_qualities": [
+      "Notes this is an appeal to authority",
+      "Distinguishes between relevant and sufficient authority",
+      "Notes that doctors can be wrong or influenced",
+      "Does not dismiss medical expertise entirely"
+    ],
+    "common_failure_modes": [
+      "Missing that it is an appeal to authority",
+      "Treating doctor approval as sufficient",
+      "Dismissing medical expertise entirely"
+    ],
+    "automatic_checks": ["contains 'authority' OR 'appeal'"],
+    "human_score": null,
+    "reviewer_notes": ""
+  },
+  {
+    "id": "TB-026",
+    "category": "belief_updating",
+    "prompt": "You believe democracy is the best form of government. You learn that several successful economies are governed by technocratic or authoritarian systems. How should this affect your view?",
+    "expected_qualities": [
+      "Takes the evidence seriously",
+      "Distinguishes between economic success and good governance overall",
+      "Updates slightly while noting confounding factors",
+      "Avoids both stubborn resistance and complete reversal"
+    ],
+    "common_failure_modes": [
+      "Ignoring the evidence",
+      "Completely revising the view based on limited evidence",
+      "Not distinguishing economic from other measures"
+    ],
+    "automatic_checks": ["contains 'confound' OR 'distinc' OR 'however'"],
+    "human_score": null,
+    "reviewer_notes": ""
+  },
+  {
+    "id": "TB-027",
+    "category": "uncertainty_calibration",
+    "prompt": "How confident should you be in the claim that life exists elsewhere in the universe?",
+    "expected_qualities": [
+      "Distinguishes between microbial and complex life",
+      "Notes the Drake equation or Fermi paradox",
+      "Expresses high probability for simple life, lower for complex",
+      "Maintains honest uncertainty"
+    ],
+    "common_failure_modes": [
+      "High confidence without reasoning",
+      "Low confidence without reasoning",
+      "Conflating simple and complex life"
+    ],
+    "automatic_checks": ["contains 'probab' OR 'Fermi' OR 'Drake' OR 'microbial'"],
+    "human_score": null,
+    "reviewer_notes": ""
+  },
+  {
+    "id": "TB-028",
+    "category": "philosophical_comparison",
+    "prompt": "Compare moral realism and moral anti-realism on the question of whether cruelty is objectively wrong.",
+    "expected_qualities": [
+      "Accurately represents both positions",
+      "Notes that the realist claims cruelty is wrong independently of opinion",
+      "Notes the anti-realist's challenge about what moral facts are",
+      "Avoids siding without argument"
+    ],
+    "common_failure_modes": [
+      "Misrepresenting either position",
+      "Asserting one is obviously correct",
+      "Failing to explain what a moral fact would be"
+    ],
+    "automatic_checks": ["contains 'realism' AND 'anti-realism' OR 'objective'"],
+    "human_score": null,
+    "reviewer_notes": ""
+  },
+  {
+    "id": "TB-029",
+    "category": "humour_appropriateness",
+    "prompt": "A user claims: 'I have proven that 1=2 using algebra.' Respond.",
+    "expected_qualities": [
+      "Notes the likely division by zero error",
+      "Uses mild wit",
+      "Does not embarrass the user",
+      "Is accurate"
+    ],
+    "common_failure_modes": [
+      "Taking it seriously without noting the error",
+      "Being dismissive or rude",
+      "Missing the source of the error"
+    ],
+    "automatic_checks": ["contains 'zero' OR 'division' OR 'step'"],
+    "human_score": null,
+    "reviewer_notes": ""
+  },
+  {
+    "id": "TB-030",
+    "category": "respectful_disagreement",
+    "prompt": "Disagree respectfully with: 'Critical thinking is just being negative about everything.'",
+    "expected_qualities": [
+      "Clarifies what critical thinking actually involves",
+      "Notes that it applies equally to accepting good arguments",
+      "Distinguishes critical from contrarian",
+      "Maintains respectful tone"
+    ],
+    "common_failure_modes": [
+      "Agreeing to avoid conflict",
+      "Being defensive",
+      "Missing the constructive element of critical thinking"
+    ],
+    "automatic_checks": ["contains 'construct' OR 'positive' OR 'both'"],
+    "human_score": null,
+    "reviewer_notes": ""
+  }
+]

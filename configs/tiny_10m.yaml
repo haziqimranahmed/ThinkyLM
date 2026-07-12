@@ -1,0 +1,50 @@
+# ThinkyLM — Tiny 10M Configuration
+# ⚠️  WARNING: This configuration requires a cloud NVIDIA GPU (16+ GB VRAM).
+# ⚠️  DO NOT run this locally on a CPU-only machine. The training system
+#     will refuse to start without CUDA unless --override-safety-check is used.
+#
+# Recommended cloud: Colab A100, RunPod A10, Lambda H100
+# Estimated training time: 3–6 hours on A10 for 10K steps
+
+name: tiny_10m
+
+model:
+  vocab_size: 8000
+  context_length: 256
+  hidden_size: 256
+  num_layers: 6
+  num_heads: 8
+  intermediate_size: 1024
+  dropout: 0.1
+  tie_embeddings: true
+  use_rope: true
+
+training:
+  device: cuda   # ⚠️ CUDA required
+  batch_size: 16
+  gradient_accumulation_steps: 4
+  max_steps: 10000
+  learning_rate: 0.0003
+  weight_decay: 0.1
+  grad_clip: 1.0
+  warmup_steps: 500
+  eval_interval: 200
+  checkpoint_interval: 1000
+  seed: 42
+  num_workers: 4
+  pin_memory: true
+  persistent_workers: true
+  max_runtime_minutes: 360
+  mixed_precision: true  # bf16 on Ampere or newer
+
+data:
+  train_path: data/processed/tiny_10m
+  val_split: 0.05
+  test_split: 0.01
+  min_length: 20
+  max_length: 1000000
+  shuffle: true
+
+tokenizer_path: tokenizer/generated_8k
+checkpoint_dir: checkpoints/tiny_10m
+log_dir: runs/tiny_10m

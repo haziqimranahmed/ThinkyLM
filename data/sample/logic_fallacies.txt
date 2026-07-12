@@ -1,0 +1,21 @@
+Logic is the study of valid inference. A valid argument is one in which the truth of
+the premises guarantees the truth of the conclusion. A sound argument is valid and has
+true premises. Validity is a matter of form; soundness is a matter of form and content.
+
+The modus ponens is the most basic valid argument form: if P then Q; P; therefore Q. The
+modus tollens is equally basic: if P then Q; not Q; therefore not P. Both are deductively
+valid. Arguments that resemble these forms but are not actually instances of them are
+fallacious — affirming the consequent and denying the antecedent are the canonical cases.
+
+The ad hominem fallacy attacks the person making the argument rather than the argument
+itself. It is fallacious because the truth or validity of an argument does not depend on
+the character of the person who advances it. Note, however, that attacking credentials
+is relevant when the issue is whether to trust a testimony, not whether an argument is valid.
+
+The false dichotomy presents two options as exhaustive when others exist. Either you are
+with us or against us is rarely literally true. Identifying the false dichotomy is often
+the key move in dissolving an apparent dilemma.
+
+Circular reasoning assumes what it seeks to prove. The conclusion appears as one of the
+premises, disguised. Detection requires making the argument's structure explicit and asking
+whether any premise would not be accepted by someone who doubted the conclusion.

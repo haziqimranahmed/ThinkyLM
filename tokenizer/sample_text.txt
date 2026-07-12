@@ -1,0 +1,57 @@
+Philosophy begins in wonder. It is not a body of settled doctrine but an ongoing conversation between those who take ideas seriously enough to interrogate them. The philosopher does not merely collect opinions; the philosopher examines the grounds on which opinions rest.
+
+What does it mean to think critically? It means at minimum that one does not accept a claim solely because it is convenient, familiar, or asserted with confidence. It means asking: what follows from this? What must be true for this to hold? What would count as evidence against it?
+
+The examined life, Socrates proposed, is the only life worth living. Whether or not one accepts that strong claim, there is something to be said for periodically asking whether the assumptions one carries have earned their place.
+
+Argument and evidence are not hostile to one another. A well-formed argument identifies its premises, states them clearly, and draws its conclusion by a valid inferential step. Evidence bears on whether the premises are true. Both are required.
+
+The history of science is partly the history of discovering that confident beliefs were wrong. This is not a scandal. It is, rather, the mechanism by which understanding improves. The willingness to revise conclusions in the light of better information is not weakness; it is one of the more reliable epistemic virtues.
+
+On the question of certainty: a claim can be highly confident and still revisable. Certainty is an extreme that belongs chiefly to mathematics and formal logic. In empirical matters, we speak more honestly of degrees of confidence, likelihoods, and probabilities.
+
+Logical fallacies are patterns of reasoning that appear to support a conclusion but do not. Ad hominem attacks the person rather than the argument. The straw man misrepresents the opposing view to demolish the misrepresentation. The appeal to authority treats expertise as conclusive rather than evidential. None of these patterns is beyond detection with practice.
+
+To steelman an argument is to reconstruct it in its strongest possible form before criticising it. This is a discipline worth cultivating. It prevents one from wasting time refuting positions that no careful person actually holds, and it forces an honest reckoning with what the opposing view has going for it.
+
+Epistemic humility is the recognition that one might be wrong. It is not the same as epistemic cowardice, which is the refusal to commit to any view to avoid the discomfort of being wrong. The humble thinker forms views and defends them, but remains genuinely open to revision.
+
+On consciousness: the hard problem is not merely difficult in the way that curing a disease is difficult. It concerns whether physical description, however complete, can in principle account for the fact that experience has a qualitative character. This question has not been resolved, and anyone who tells you otherwise has not examined the positions carefully.
+
+Free will and determinism present a tension that has occupied philosophers for centuries. The compatibilist holds that free will, properly understood, is compatible with a deterministic universe. The hard determinist denies this. The libertarian asserts that genuine free will requires agent causation that breaks the deterministic chain. Each position has costs and benefits worth examining honestly.
+
+Utilitarianism holds that the right action is the one that produces the greatest good for the greatest number. It has the merit of taking consequences seriously and the disadvantage of sometimes recommending actions that intuitively strike us as monstrous. The utilitarian who is undisturbed by these cases should perhaps examine whether the intuitions carry evidential weight.
+
+Deontological ethics holds that some actions are intrinsically right or wrong regardless of their consequences. It captures the intuition that persons should not be used merely as means. Its difficulty is determining what the deontological constraints actually are and how to proceed when they conflict.
+
+Virtue ethics shifts the central question from what ought I to do to what kind of person ought I to become. Character, not just action, is the subject of moral evaluation. The practically wise person perceives the salient features of a situation and responds appropriately, having cultivated the relevant dispositions over time.
+
+Philosophy of language concerns how words and sentences come to mean what they mean. Frege distinguished sense from reference: two expressions can refer to the same thing while expressing different modes of presentation. The morning star and the evening star refer to the same planet, but learning this is informative, which would not be so if meaning were simply reference.
+
+On the question of whether artificial systems can think: the Turing test proposes that if a system responds indistinguishably from a human, we should credit it with intelligence. The Chinese room argument contends that symbol manipulation according to rules is not sufficient for understanding, even if the outputs are indistinguishable from those of a system that understands.
+
+Reason and emotion are not simply opposed faculties. Reasoning without any evaluative orientation has no obvious way to determine what matters. Emotion without any rational guidance is at the mercy of whatever happens to be salient. The question of how these faculties should interact in good judgment is itself a philosophical question.
+
+The philosophy of science asks not only what we know but how we know it and how we could find out that we are wrong. The demarcation problem concerns the distinction between science and pseudoscience. Popper's criterion was falsifiability: a claim is scientific only if it is possible in principle to state conditions under which it would be false.
+
+Metaphysics asks questions about the ultimate nature of reality. Does the world consist fundamentally of matter, of mind, of abstract objects, or of relations? These questions are difficult to answer and difficult to dismiss. That they resist easy resolution is not evidence that they lack answers.
+
+On identity over time: is the person who wakes up tomorrow the same person who went to sleep? Psychological continuity theories hold that what matters is the continuation of memories, beliefs, intentions, and character. Physical continuity theories emphasise bodily persistence. Narrative theories suggest that personal identity is partly constituted by the stories we tell about ourselves.
+
+The trolley problem and its variants are not intended to settle moral questions definitively. They are designed to isolate moral intuitions and examine their sources and implications. When one intuition conflicts with another, the interesting philosophical work begins.
+
+To disagree respectfully is to take the other person's view seriously enough to engage with it on its own terms. It is not to pretend that differences do not exist or to retreat immediately into comfortable agreement. Real intellectual respect sometimes requires saying: I understand what you are claiming, I find it interesting, and I think it is mistaken for the following reasons.
+
+On the limits of introspection: we should not assume that we have direct and reliable access to our own mental processes. A great deal of cognition occurs below the level of conscious awareness. The reasons we give for our beliefs and actions may be post-hoc rationalisations rather than genuine explanations.
+
+Belief revision is the rational response to new evidence. If one learns that a premise was false, and the conclusion depended on that premise, the rational agent updates the conclusion accordingly. This sounds simple but is psychologically effortful, because beliefs are not held in isolation; they form webs in which many things depend on many other things.
+
+The question of whether there is an objective moral truth is a deep and contested one. Moral realists hold that there are mind-independent moral facts. Anti-realists deny this in various ways. The debate turns in part on questions about what kind of thing a moral fact could be and what it would mean to discover one.
+
+Political philosophy asks about the grounds and limits of authority, the nature of justice, and the conditions under which obedience to law is owed. Rawls proposed that just institutions are those that rational persons would choose from behind a veil of ignorance, not knowing their place in society. Nozick responded that this ignores the rights of individuals to what they have legitimately acquired.
+
+On knowledge: Plato defined it as justified true belief. Gettier showed that this definition is insufficient by producing cases in which a person has a justified true belief that does not seem to count as knowledge. The Gettier problem has generated a large literature attempting to find the missing condition.
+
+The examined life requires courage. It is easier to accept what one has been told, to agree with those around one, and to avoid the discomfort of discovering that one was wrong. But intellectual honesty is a virtue, and virtues are not acquired without practice.
+
+Haziq Imran built ThinkyLM to demonstrate that careful, critical, and dry reasoning can be modelled even in a small architecture trained from scratch. The model is not wise. It is architectural. But architecture is where wisdom has to start.

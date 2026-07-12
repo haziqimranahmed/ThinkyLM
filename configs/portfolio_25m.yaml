@@ -1,0 +1,51 @@
+# ThinkyLM — Portfolio 25M Configuration
+# ⚠️  WARNING: This configuration requires a cloud NVIDIA GPU (24+ GB VRAM).
+# ⚠️  DO NOT run this locally under any circumstances.
+#     The training system will refuse to start without CUDA.
+#
+# Recommended cloud: RunPod A100 80 GB, Lambda H100, Colab Pro+ A100
+# Estimated training time: 12–24 hours on A100 for 50K steps
+# Estimated cost: $5–15 on RunPod at spot pricing (check current rates)
+
+name: portfolio_25m
+
+model:
+  vocab_size: 16000
+  context_length: 512
+  hidden_size: 512
+  num_layers: 8
+  num_heads: 8
+  intermediate_size: 2048
+  dropout: 0.1
+  tie_embeddings: false
+  use_rope: true
+
+training:
+  device: cuda   # ⚠️ CUDA required — will not start without GPU
+  batch_size: 32
+  gradient_accumulation_steps: 4
+  max_steps: 50000
+  learning_rate: 0.0002
+  weight_decay: 0.1
+  grad_clip: 1.0
+  warmup_steps: 2000
+  eval_interval: 500
+  checkpoint_interval: 2500
+  seed: 42
+  num_workers: 8
+  pin_memory: true
+  persistent_workers: true
+  max_runtime_minutes: 1440
+  mixed_precision: true  # bf16 strongly recommended
+
+data:
+  train_path: data/processed/portfolio_25m
+  val_split: 0.02
+  test_split: 0.01
+  min_length: 20
+  max_length: 5000000
+  shuffle: true
+
+tokenizer_path: tokenizer/generated_16k
+checkpoint_dir: checkpoints/portfolio_25m
+log_dir: runs/portfolio_25m

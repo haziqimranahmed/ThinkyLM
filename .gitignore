@@ -1,0 +1,73 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# Environment variables
+.env
+
+# Data (never commit large datasets or model weights)
+data/raw/
+data/processed/
+data/cache/
+
+# Model checkpoints and weights (NEVER commit these)
+checkpoints/
+artifacts/
+*.bin
+*.pt
+*.pth
+*.safetensors
+*.gguf
+
+# Tokenizer generated files (reproducible — re-run train_tokenizer.py)
+tokenizer/generated/
+
+# Training logs and TensorBoard runs
+runs/
+logs/
+tb_logs/
+lightning_logs/
+
+# Reports generated output (keep templates, not results)
+reports/thinky_bench_results.json
+reports/*_results.json
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Ruff / Mypy caches
+.ruff_cache/
+.mypy_cache/
+
+# Pytest
+.pytest_cache/
+
+# Coverage
+htmlcov/
+.coverage
+coverage.xml
+
+# OS
+Thumbs.db
+desktop.ini

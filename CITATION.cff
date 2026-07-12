@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "If you use ThinkyLM, please cite it as below."
+type: software
+authors:
+  - family-names: Imran
+    given-names: Haziq
+    orcid: ""
+title: "ThinkyLM: A From-Scratch Decoder-Only Transformer for Philosophical Argumentation"
+version: 0.1.0
+date-released: 2026-07-12
+url: "https://github.com/haziqimran/thinkylm"
+license: MIT
+repository-code: "https://github.com/haziqimran/thinkylm"
+abstract: >
+  ThinkyLM is an independently implemented decoder-only Transformer trained from
+  random initialisation for critical and philosophical argumentation. It includes
+  a custom BPE tokenizer, causal language-model pretraining, instruction tuning,
+  evaluation (Thinky-Bench), FastAPI inference, and Gradio demo.
+keywords:
+  - language-model
+  - transformer
+  - pytorch
+  - nlp
+  - causal-lm
+  - portfolio
+  - from-scratch

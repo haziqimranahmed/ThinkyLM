@@ -1,0 +1,112 @@
+name: ThinkyLM CI
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+
+jobs:
+  lint-and-test:
+    name: Lint + Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install CPU-only PyTorch
+        run: |
+          pip install torch --index-url https://download.pytorch.org/whl/cpu
+
+      - name: Install project dependencies
+        run: |
+          pip install tokenizers pyyaml pydantic fastapi uvicorn tqdm safetensors psutil httpx pytest pytest-asyncio ruff
+
+      - name: Ruff lint check
+        run: |
+          ruff check thinkylm/ training/ evaluation/ inference/ api/ data_pipeline/ tokenizer/ tests/
+
+      - name: Validate imports
+        run: |
+          python -c "from thinkylm import ThinkyLM, ModelConfig, ThinkyLMConfig; print('Imports OK')"
+          python -c "from thinkylm.attention import MultiHeadCausalAttention; print('Attention OK')"
+          python -c "from thinkylm.model import build_model; print('Model OK')"
+          python -c "from data_pipeline.dataset import TokenSequenceDataset; print('Dataset OK')"
+          python -c "from api.main import app; print('API OK')"
+
+      - name: Tiny forward pass test
+        env:
+          TOKENIZERS_PARALLELISM: "false"
+          OMP_NUM_THREADS: "2"
+          MKL_NUM_THREADS: "2"
+        run: |
+          python -m pytest tests/test_model_ci.py -v --tb=short
+
+      - name: Configuration tests
+        env:
+          TOKENIZERS_PARALLELISM: "false"
+        run: |
+          python -m pytest tests/test_config.py -v --tb=short
+
+      - name: Attention correctness tests (causal mask)
+        env:
+          TOKENIZERS_PARALLELISM: "false"
+        run: |
+          python -m pytest tests/test_attention.py -v --tb=short
+
+      - name: Model tests
+        env:
+          TOKENIZERS_PARALLELISM: "false"
+        run: |
+          python -m pytest tests/test_model.py -v --tb=short
+
+      - name: Generation tests
+        env:
+          TOKENIZERS_PARALLELISM: "false"
+        run: |
+          python -m pytest tests/test_generation.py -v --tb=short
+
+      - name: Dataset tests
+        env:
+          TOKENIZERS_PARALLELISM: "false"
+        run: |
+          python -m pytest tests/test_dataset.py -v --tb=short
+
+      - name: Checkpoint tests
+        env:
+          TOKENIZERS_PARALLELISM: "false"
+        run: |
+          python -m pytest tests/test_checkpoint.py -v --tb=short
+
+      - name: Hardware safety tests
+        env:
+          TOKENIZERS_PARALLELISM: "false"
+        run: |
+          python -m pytest tests/test_hardware_safety.py -v --tb=short
+
+      - name: API tests
+        env:
+          TOKENIZERS_PARALLELISM: "false"
+          THINKYLM_CHECKPOINT: ""
+        run: |
+          python -m pytest tests/test_api.py -v --tb=short
+
+      - name: Tokenizer round-trip (train + test)
+        env:
+          TOKENIZERS_PARALLELISM: "false"
+        run: |
+          python tokenizer/train_tokenizer.py \
+            --input tokenizer/sample_text.txt \
+            --vocab-size 500 \
+            --output tokenizer/generated
+          python -m pytest tests/test_tokenizer.py -v --tb=short
+
+      # NOTE: We do NOT run model training in CI.
+      # Full training is done locally or on cloud GPUs.

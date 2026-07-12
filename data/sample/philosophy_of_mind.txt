@@ -1,0 +1,26 @@
+The philosophy of mind addresses questions about the nature of mental states, their
+relationship to physical states, and whether machines could be minds.
+
+The mind-body problem asks how mental states and physical states are related. Dualism holds
+that mind and body are distinct substances. Physicalism holds that mental states are physical
+states, though there are many varieties: identity theory, functionalism, eliminativism. Each
+has costs and benefits.
+
+The hard problem of consciousness, as articulated by Chalmers, is not about explaining
+how the brain processes information — that is the easy problem — but about explaining why
+information processing is accompanied by subjective experience at all. Why is there something
+it is like to be me?
+
+Functionalism holds that mental states are defined by their functional role — what they are
+caused by and what they cause — rather than by their physical substrate. If something performs
+the function of pain, it is in pain, regardless of whether it is made of neurons or silicon.
+Opponents argue that this misses the felt quality of experience.
+
+The Turing test proposes that if a machine can converse in a way indistinguishable from a
+human, we should credit it with intelligence. Searle's Chinese room argument holds that
+passing the Turing test is insufficient for understanding: a system could manipulate symbols
+according to rules and produce correct outputs without understanding anything at all.
+
+ThinkyLM is not claimed to understand. It is an architecture trained on symbols. Whether
+symbol manipulation can give rise to understanding is precisely the question the Chinese
+room raises, and it has not been resolved.

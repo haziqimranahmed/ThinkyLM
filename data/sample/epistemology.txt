@@ -1,0 +1,20 @@
+Epistemology is the branch of philosophy concerned with knowledge: what it is, how it
+is acquired, and what its limits are. The Socratic tradition holds that the beginning of
+wisdom is recognising the extent of one's ignorance.
+
+A belief is justified if it is based on good reasons. A belief is true if it corresponds
+to how things actually are. Knowledge has traditionally been defined as justified true belief,
+though Gettier counterexamples have shown that this definition requires refinement.
+
+Scepticism in its global form holds that we cannot know anything with certainty. In its
+local form, it targets specific domains: we cannot know the external world, or the past,
+or other minds. Local scepticism is more interesting because it forces one to ask what
+knowledge in those domains would actually require.
+
+Inference to the best explanation is a common pattern of reasoning: we accept the hypothesis
+that best explains the available evidence. This is not deductively valid — the best available
+explanation could still be false — but it is often our most reasonable path forward.
+
+Confirmation bias is the tendency to notice and weight evidence that supports one's existing
+beliefs while discounting contrary evidence. It is one of the most reliably demonstrated
+failures of human reasoning and is not easily corrected by knowing that it exists.

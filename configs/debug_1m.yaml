@@ -1,0 +1,47 @@
+# ThinkyLM — Debug Configuration (~1M parameters)
+# Safe for local CPU training on Dell Inspiron i5-1135G7 with 16 GB RAM.
+# Maximum 20 steps, approximately 1–3 minutes.
+# Run with: python training/pretrain.py --config configs/debug_1m.yaml
+
+name: debug_1m
+
+model:
+  vocab_size: 4000
+  context_length: 128
+  hidden_size: 128
+  num_layers: 3
+  num_heads: 4
+  intermediate_size: 512
+  dropout: 0.1
+  tie_embeddings: true
+  use_rope: false
+
+training:
+  device: cpu
+  batch_size: 2
+  gradient_accumulation_steps: 2
+  max_steps: 20
+  learning_rate: 0.0003
+  weight_decay: 0.1
+  grad_clip: 1.0
+  warmup_steps: 4
+  eval_interval: 10
+  checkpoint_interval: 20
+  seed: 42
+  num_workers: 0
+  pin_memory: false
+  persistent_workers: false
+  max_runtime_minutes: 3
+  mixed_precision: false  # CPU does not support mixed precision
+
+data:
+  train_path: data/sample
+  val_split: 0.1
+  test_split: 0.05
+  min_length: 20
+  max_length: 100000
+  shuffle: true
+
+tokenizer_path: tokenizer/generated
+checkpoint_dir: checkpoints/debug_1m
+log_dir: runs/debug_1m

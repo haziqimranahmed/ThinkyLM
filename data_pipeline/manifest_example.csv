@@ -1,0 +1,3 @@
+source_name,source_url,licence,category,documents,tokens,split,notes
+ThinkyLM Original Sample,https://github.com/haziqimran/thinkylm,MIT,philosophy/original,6,~8000,train+val+test,Original text written for ThinkyLM. Safe to use.
+ThinkyLM Instruction Set,https://github.com/haziqimran/thinkylm,MIT,instruction/synthetic,50,~12000,train,Synthetic instruction pairs for demonstration. Not a production dataset.

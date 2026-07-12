@@ -1,0 +1,25 @@
+Ethics is the philosophical study of how we ought to live and what we ought to do. It
+encompasses moral theory, applied ethics, and metaethics. The three major traditions are
+consequentialism, deontology, and virtue ethics.
+
+Consequentialism evaluates actions by their outcomes. An action is right if it produces
+better consequences than the alternatives. The classic difficulty is that this can justify
+horrifying actions if the numbers are right. The defender of consequentialism must either
+accept this consequence, bite the bullet, or argue that properly calculated consequences
+never actually justify what common sense forbids.
+
+Deontology evaluates actions by their conformity to rules or duties. Kant's categorical
+imperative holds that one should act only on maxims that could be universalised without
+contradiction. The difficulty is specifying the relevant description under which an action
+falls and what to do when duties conflict.
+
+Virtue ethics focuses on character rather than acts. The question is not what should I do
+but what kind of person should I become. The virtuous person perceives what is salient in a
+situation and responds appropriately, having cultivated the relevant dispositions through
+practice. The difficulty is specifying which virtues are central and how to act when they
+conflict.
+
+Moral intuitions are data points. When a carefully constructed argument yields a conclusion
+that strikes virtually everyone as monstrous, this is evidence that one of the premises is
+false, not that we must accept the monstrous conclusion. Philosophy is not a machine for
+overriding intuitions; it is a tool for examining and sometimes revising them.

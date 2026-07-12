@@ -1,0 +1,28 @@
+# Normalize line endings across platforms
+* text=auto
+
+# Python files: always LF
+*.py text eol=lf
+
+# Shell scripts: always LF
+*.sh text eol=lf
+
+# Windows PowerShell: CRLF
+*.ps1 text eol=crlf
+
+# Config / docs: auto
+*.yaml text eol=lf
+*.yml  text eol=lf
+*.md   text eol=lf
+*.toml text eol=lf
+*.cfg  text eol=lf
+*.txt  text eol=lf
+*.json text eol=lf
+*.csv  text eol=lf
+*.cff  text eol=lf
+
+# Binary files — do not touch
+*.safetensors binary
+*.pt binary
+*.bin binary
+*.pth binary

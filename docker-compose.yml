@@ -1,0 +1,42 @@
+version: "3.9"
+
+services:
+  thinkylm-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: thinkylm:latest
+    container_name: thinkylm_api
+    ports:
+      - "8000:8000"
+    volumes:
+      # Mount your checkpoint directory here
+      # Run: docker-compose up after training locally
+      - ./checkpoints:/app/checkpoints:ro
+      - ./tokenizer/generated:/app/tokenizer/generated:ro
+    environment:
+      - TOKENIZERS_PARALLELISM=false
+      - OMP_NUM_THREADS=2
+      - MKL_NUM_THREADS=2
+      - THINKYLM_CONFIG=configs/debug_1m.yaml
+      # Set this to the path of your checkpoint INSIDE the container:
+      - THINKYLM_CHECKPOINT=${THINKYLM_CHECKPOINT:-}
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c",
+             "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Optional: TensorBoard for training visualisation
+  tensorboard:
+    image: tensorflow/tensorflow:latest-jupyter
+    container_name: thinkylm_tensorboard
+    ports:
+      - "6006:6006"
+    volumes:
+      - ./runs:/runs:ro
+    command: tensorboard --logdir=/runs --host=0.0.0.0
+    profiles:
+      - training  # Only starts with: docker-compose --profile training up
